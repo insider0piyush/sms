@@ -73,7 +73,7 @@
 
         <div class="split left">
             <div class="centered">
-                <img src="home_forget_pass.png">
+                <img src="images/home_forget_pass.png">
                 <h1 style="font-family: Comic Sans MS ; color: white">Forget Password ? </h1>
                 <p style="font-family: Comic Sans MS ; color: white ; font-size: 20px;">Dont Worry I Gotch You , Be Patient , And Fill The Form Calmly ~</p>
             </div>

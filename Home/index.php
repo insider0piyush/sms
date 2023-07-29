@@ -9,8 +9,7 @@
 </head>
 <style>
     #grad_back {
-        height: 600px;
-        background-image: linear-gradient(to bottom right, red, indigo, white);
+       background: linear-gradient(to left,red,indigo,white);
     }
 
     .label {
@@ -55,7 +54,7 @@
 
     <table style="margin:auto ; margin-top:90px ; margin-bottom:90px">
         <td>
-            <img src="home_register.png"></br>
+            <img src="images/home_register.png"></br>
             <label class="label">
                 Welcome To SMS ~</br>
             </label>

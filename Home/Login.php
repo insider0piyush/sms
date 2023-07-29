@@ -96,7 +96,7 @@
 
         <div class="split left">
             <div class="centered">
-                <img src="home_login.png" width="400px">
+                <img src="images/home_login.png" width="400px">
                 <h1 style="font-family: Comic Sans MS ; color: white">Welcome Back</h1>
                 <p style="font-family: Comic Sans MS ; color: white">To Keep Connected With Us Please Signin With Your
                     Personal Info.</p>
