@@ -152,46 +152,30 @@
                             <legend style="color:white ; font-family:Comic Sans MS">
                                 <fieldset
                                     style="border-radius:15px ; border-color:white ; border-width:3px ; background-color: crimson">
-                                    Student College Details</fieldset>
+                                    Student Educational Detail</fieldset>
                             </legend>
                             <div style="margin-top: 7px;">
-                                <input type="text" name="studcollege" id="studcollege"
+                                <input type="text" name="studschool" id="studschool"
                                     style="border-radius:12px ; border-color:transparent ; outline-color:transparent ; margin-inline-start: 7px;padding: 7px; width: 282px;"
-                                    placeholder="Enter College Name" required>
+                                    placeholder="Last Year School Name" required>
                             </div>
 
                             <div style="margin-top: 7px;">
-                                <input type="text" name="studcourse" id="studcourse"
+                                <input type="text" name="std12" id="std12"
                                     style="border-radius:12px ; border-color:transparent ; outline-color:transparent ; margin-inline-start: 7px;padding: 7px; width: 282px;"
-                                    placeholder="Enter Your Course" required>
+                                    placeholder="Student 12th Percentage" required>
                             </div>
 
                             <div style="margin-top: 7px;">
-                                <input type="text" name="studid" id="studid"
+                                <input type="text" name="std10" id="std10"
                                     style="border-radius:12px ; border-color:transparent ; outline-color:transparent ; margin-inline-start: 7px;padding: 7px; width: 282px;"
-                                    placeholder="Enter Your SID" required>
-                            </div>
-
-                            <div>
-                                <label for="studdiv"
-                                    style="padding: 4px;margin-top: 7px; font-family:Comic Sans MS ; color:white ">Division</label>
-                                <select name="studdiv"
-                                    style="border-radius:12px ; border-color:transparent ; outline-color:transparent ; margin-inline-start: 7px;padding: 7px; width: 232px;margin-top: 7px; border-right: 16px solid transparent">
-                                    <option name="studdiv">1</option>
-                                    <option name="studdiv">2</option>
-                                    <option name="studdiv">3</option>
-                                    <option name="studdiv">4</option>
-                                    <option name="studdiv">5</option>
-                                    <option name="studdiv">6</option>
-                                    <option name="studdiv">7</option>
-                                    <option name="studdiv">8</option>
-                                </select>
+                                    placeholder="Student 10th Percentage" required>
                             </div>
 
                             <div style="margin-top: 7px;">
-                                <input type="text" name="studrno" id="studrno"
+                                <input type="text" name="otheredu" id="otheredu"
                                     style="border-radius:12px ; border-color:transparent ; outline-color:transparent ; margin-inline-start: 7px;padding: 7px; width: 282px;"
-                                    placeholder="Enter Your Roll No" required>
+                                    placeholder="Other Education Qualification" >
                             </div>
                         </fieldset>
                     </tr>
@@ -282,9 +266,8 @@
     $createTable = "CREATE TABLE $STUDENT(
                 $STUD_FNAME VARCHAR(20),$STUD_LNAME VARCHAR(20),
                 $STUD_EMAIL VARCHAR(42) UNIQUE,$STUD_MOBILE BIGINT(10) UNIQUE,$STUD_GENDER VARCHAR(10),
-                $STUD_COLLEGE VARCHAR(100),$STUD_COURSE VARCHAR(52),
-                $STUD_ID BIGINT(10) UNIQUE , $STUD_DIV INT(1),$STUD_RNO INT(3) UNIQUE,$STUD_ADDRESS VARCHAR(100),
-                $STUD_CITY VARCHAR(20), $STUD_STATE VARCHAR(10),$STUD_PINCODE INT(6),$STUD_PASSWORD TEXT)";
+                $STUD_SCHOOL VARCHAR(52), $STUD_12TH FLOAT ,$STUD_10TH FLOAT,$STUD_OTHER_EDU TEXT ,
+                $STUD_ADDRESS VARCHAR(100), $STUD_CITY VARCHAR(20), $STUD_STATE VARCHAR(10),$STUD_PINCODE INT(6),$STUD_PASSWORD TEXT)";
 
     //$queryExe=mysqli_query($con,$createTable);
     
@@ -296,18 +279,17 @@
         $MNO = $_POST[$STUD_MOBILE];
         $MOBILE = $MCODE . $MNO;
         $GENDER = $_POST[$STUD_GENDER];
-        $COLLEGE = $_POST[$STUD_COLLEGE];
-        $COURSE = $_POST[$STUD_COURSE];
-        $ID = $_POST[$STUD_ID];
-        $DIV = $_POST[$STUD_DIV];
-        $RNO = $_POST[$STUD_RNO];
+        $M12TH=$_POST[$STUD_12TH];
+        $M10TH=$_POST[$STUD_10TH];
+        $STUD_SCHOOL=$_POST[$STUD_SCHOOL];
+        $OTHER_EDU=$_POST[$STUD_OTHER_EDU];
         $ADDRESS = $_POST[$STUD_ADDRESS];
         $CITY = $_POST[$STUD_CITY];
         $STATE = $_POST[$STUD_STATE];
         $PINCODE = $_POST[$STUD_PINCODE];
         $PASSWORD = $_POST[$STUD_PASSWORD];
 
-        $sql = "SELECT * FROM $STUDENT WHERE $STUD_EMAIL='$EMAIL' OR $STUD_MOBILE=$MOBILE OR  $STUD_RNO=$RNO OR $STUD_ID=$ID";
+        $sql = "SELECT * FROM $STUDENT WHERE $STUD_EMAIL='$EMAIL' OR $STUD_MOBILE=$MOBILE ";
         $dbquery = mysqli_query($con, $sql);
         $data = mysqli_num_rows($dbquery);
         if ($data) {
@@ -318,7 +300,7 @@
             </script>
             <?php
         } else {
-            $insertInTable = "INSERT INTO $STUDENT VALUES('$FNAME','$LNAME','$EMAIL',$MOBILE,'$GENDER','$COLLEGE','$COURSE',$ID,$DIV,$RNO,'$ADDRESS','$CITY','$STATE',$PINCODE,'$PASSWORD')";
+            $insertInTable = "INSERT INTO $STUDENT VALUES('$FNAME','$LNAME','$EMAIL',$MOBILE,'$GENDER','$STUD_SCHOOL',$M12TH,$M10TH,'$OTHER_EDU','$ADDRESS','$CITY','$STATE',$PINCODE,'$PASSWORD')";
             $queryExe = mysqli_query($con, $insertInTable);
             if ($queryExe) {
                 ?>

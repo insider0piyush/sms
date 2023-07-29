@@ -93,22 +93,6 @@
 
                     <form action="#" method="post">
 
-                        <div style="margin-top: 17px;">
-                            <input type="text" name="studrno" id="studrno" 
-                                style="margin-inline-start: 7px;padding: 7px; width: 250px;
-                                    border-radius: 12px; outline-color: transparent;
-                                    border-color: transparent; margin-bottom: 3px" 
-                                placeholder="Enter Roll No" required>
-                        </div>
-            
-                        <div style="margin-top: 7px;">
-                            <input type="text" name="studid" id="studid" 
-                                style="margin-inline-start: 7px;padding: 7px; width: 250px;
-                                    border-radius: 12px; outline-color: transparent;
-                                    border-color: transparent; margin-bottom: 3px" 
-                                placeholder="Enter SID No" required>
-                        </div>
-            
                         <div style="margin-top: 7px;">
                             <input type="email" name="studemail" id="studemail" 
                                 style="margin-inline-start: 7px;padding: 7px; width: 250px;
@@ -175,14 +159,13 @@
        <?php
         include "C:\inetpub\wwwroot\php\sms\Home\_init.php" ;
         if(isset($_POST['changePassword'])){
-        $RNO=$_POST[$STUD_RNO];
-        $SID=$_POST[$STUD_ID];
+        
         $EMAIL=$_POST[$STUD_EMAIL];
         $PASSWD=$_POST[$STUD_PASSWORD];
         $CPASSWD=$_POST['studcpassword'];
 
             if($PASSWD==$CPASSWD){
-                $sql="UPDATE $STUDENT SET $STUD_PASSWORD='$PASSWD' WHERE $STUD_RNO=$RNO OR $STUD_ID=$SID OR $STUD_EMAIL='$EMAIL'";
+                $sql="UPDATE $STUDENT SET $STUD_PASSWORD='$PASSWD' WHERE $STUD_EMAIL='$EMAIL'";
                 $dbQuery=mysqli_query($con,$sql);
                 if(!$dbQuery){
                 ?>
