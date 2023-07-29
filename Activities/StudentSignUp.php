@@ -261,7 +261,7 @@
         </td>
     </table>
     <?php
-    include "C:\inetpub\wwwroot\php\sms\Home\_init.php";
+    include "C:\inetpub\wwwroot\php\sms\Utilities\_init.php";
     $createTable = "CREATE TABLE $STUDENT(
                 $STUD_FNAME VARCHAR(20),$STUD_LNAME VARCHAR(20),
                 $STUD_EMAIL VARCHAR(42) UNIQUE,$STUD_MOBILE BIGINT(10) UNIQUE,$STUD_GENDER VARCHAR(10),
@@ -305,7 +305,7 @@
                 ?>
                 <script type="text/javascript">
                     alert("Successfully Register !")
-                    window.open("http://localhost/php/sms/Home/Login.php", "_self")
+                    window.open("http://localhost/php/sms/Activities/StudentSignIn.php", "_self")
                 </script>
                 <?php
             }
@@ -315,7 +315,7 @@
     if (isset($_POST['alreadyAccount'])) {
         ?>
     <script>
-        window.open("http://localhost/php/sms/Home/Login.php", "_self")
+        window.open("http://localhost/php/sms/Activities/StudentSignIn.php", "_self")
     </script>
     <?php
     }

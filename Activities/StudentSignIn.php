@@ -211,7 +211,7 @@
         </div>
     </body>
     <?php
-    include "C:\inetpub\wwwroot\php\sms\Home\_init.php";
+    include "C:\inetpub\wwwroot\php\sms\Utilities\_init.php";
 
     if (isset($_POST['btnLogin'])) {
 
@@ -227,7 +227,7 @@
         if ($data) {
             ?>
             <script type="text/javascript">
-                window.open("http://localhost/php/sms/Home/Main.php", "_self")
+                window.open("http://localhost/php/sms/Home/Welcome/Main.php", "_self")
                 alert('Successfully Login')
             </script>
 
@@ -256,14 +256,14 @@
     if (isset($_POST['newAccount'])) {
         ?>
     <script type="text/javascript">
-        window.open("http://localhost/php/sms/Home/index.php", "_self")
+        window.open("http://localhost/php/sms/Activities/StudentSignUp.php", "_self")
     </script>
     <?php
     }
     if (isset($_POST['forgotPassword'])) {
         ?>
         <script type="text/javascript">
-            window.open("http://localhost/php/sms/Home/ForgotPassword.php", "_self")
+            window.open("http://localhost/php/sms/Activities/StudentForgotPassword.php", "_self")
         </script>
         <?php
     }

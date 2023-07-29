@@ -157,7 +157,7 @@
 
         </div>
        <?php
-        include "C:\inetpub\wwwroot\php\sms\Home\_init.php" ;
+        include "C:\inetpub\wwwroot\php\sms\Utilities\_init.php" ;
         if(isset($_POST['changePassword'])){
         
         $EMAIL=$_POST[$STUD_EMAIL];
@@ -177,7 +177,7 @@
                 ?>
                 <script type="text/javascript">
                 alert("Password Update Successfully")
-                    window.open("http://localhost/php/sms/Home/Login.php","_self")
+                    window.open("http://localhost/php/sms/Activities/StudentSignIn.php","_self")
                 </script>
                 <?php
                 }
