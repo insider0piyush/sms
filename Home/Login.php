@@ -238,8 +238,8 @@
             if ($data) {
                 if ($data) {
                     ?>
-                        <script>
-                          
+                        <script type="text/javascript">
+                            alert("Wrong password ! try again.. ");
                         </script>
                         <?php
                 }
