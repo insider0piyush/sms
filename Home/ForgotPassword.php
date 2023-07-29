@@ -173,7 +173,7 @@
 
         </div>
        <?php
-        include "C:\inetpub\wwwroot\php\sms\Utilities\_init.php" ;
+        include "C:\inetpub\wwwroot\php\sms\Home\_init.php" ;
         if(isset($_POST['changePassword'])){
         $RNO=$_POST[$STUD_RNO];
         $SID=$_POST[$STUD_ID];

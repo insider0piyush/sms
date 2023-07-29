@@ -278,7 +278,7 @@
         </td>
     </table>
     <?php
-    include "C:\inetpub\wwwroot\php\sms\Utilities\_init.php";
+    include "C:\inetpub\wwwroot\php\sms\Home\_init.php";
     $createTable = "CREATE TABLE $STUDENT(
                 $STUD_FNAME VARCHAR(20),$STUD_LNAME VARCHAR(20),
                 $STUD_EMAIL VARCHAR(42) UNIQUE,$STUD_MOBILE BIGINT(10) UNIQUE,$STUD_GENDER VARCHAR(10),
