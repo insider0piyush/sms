@@ -262,13 +262,13 @@
     </table>
     <?php
     include "C:\inetpub\wwwroot\php\sms\Utilities\_init.php";
-    $createTable = "CREATE TABLE $STUDENT(
+    $createTable = "CREATE TABLE IF NOT EXISTS $STUDENT(
                 $STUD_FNAME VARCHAR(20),$STUD_LNAME VARCHAR(20),
                 $STUD_EMAIL VARCHAR(42) UNIQUE,$STUD_MOBILE BIGINT(10) UNIQUE,$STUD_GENDER VARCHAR(10),
                 $STUD_SCHOOL VARCHAR(52), $STUD_12TH FLOAT ,$STUD_10TH FLOAT,$STUD_OTHER_EDU TEXT ,
                 $STUD_ADDRESS VARCHAR(100), $STUD_CITY VARCHAR(20), $STUD_STATE VARCHAR(10),$STUD_PINCODE INT(6),$STUD_PASSWORD TEXT)";
 
-    //$queryExe=mysqli_query($con,$createTable);
+    $queryExe=mysqli_query($con,$createTable);
     
     if (isset($_POST['btnSignUp'])) {
         $FNAME = $_POST[$STUD_FNAME];
